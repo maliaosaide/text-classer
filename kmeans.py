@@ -2,7 +2,6 @@
 """
 K-means-Single-Test
 """
-
 from sklearn.cluster import KMeans
 from preprocess import *
 from visualizer import plot_result
@@ -14,7 +13,6 @@ import time
 import pandas as pd
 from sklearn import metrics
 from preprocess import loading_source
-
 """
 loading source
 载入资源
@@ -99,7 +97,7 @@ labels_true = content.flag.to_list()
 ars = metrics.adjusted_rand_score(labels_true, label)
 print("adjusted_rand_score: ", ars)
 
-fmi = metrics.adjusted_rand_score(labels_true, label)
+fmi = metrics.adjusted_mutual_info_score(labels_true, label)
 print("FMI: ", fmi)
 
 silhouette = metrics.silhouette_score(trainingData, label)
